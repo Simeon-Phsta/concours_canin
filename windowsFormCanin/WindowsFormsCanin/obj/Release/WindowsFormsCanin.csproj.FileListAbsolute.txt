@@ -1,0 +1,16 @@
+C:\Users\fhubert\source\repos\SIMEON-CANIN\windowsFormCanin\WindowsFormsCanin\bin\Release\WindowsFormsCanin.exe.config
+C:\Users\fhubert\source\repos\SIMEON-CANIN\windowsFormCanin\WindowsFormsCanin\bin\Release\WindowsFormsCanin.exe
+C:\Users\fhubert\source\repos\SIMEON-CANIN\windowsFormCanin\WindowsFormsCanin\bin\Release\WindowsFormsCanin.pdb
+C:\Users\fhubert\source\repos\SIMEON-CANIN\windowsFormCanin\WindowsFormsCanin\bin\Release\EntityFramework.dll
+C:\Users\fhubert\source\repos\SIMEON-CANIN\windowsFormCanin\WindowsFormsCanin\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\fhubert\source\repos\SIMEON-CANIN\windowsFormCanin\WindowsFormsCanin\bin\Release\EntityFramework.xml
+C:\Users\fhubert\source\repos\SIMEON-CANIN\windowsFormCanin\WindowsFormsCanin\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\fhubert\source\repos\SIMEON-CANIN\windowsFormCanin\WindowsFormsCanin\bin\Release\fr\EntityFramework.resources.dll
+C:\Users\fhubert\source\repos\SIMEON-CANIN\windowsFormCanin\WindowsFormsCanin\obj\Release\WindowsFormsCanin.csprojAssemblyReference.cache
+C:\Users\fhubert\source\repos\SIMEON-CANIN\windowsFormCanin\WindowsFormsCanin\obj\Release\WindowsFormsCanin.Form1.resources
+C:\Users\fhubert\source\repos\SIMEON-CANIN\windowsFormCanin\WindowsFormsCanin\obj\Release\WindowsFormsCanin.Properties.Resources.resources
+C:\Users\fhubert\source\repos\SIMEON-CANIN\windowsFormCanin\WindowsFormsCanin\obj\Release\WindowsFormsCanin.csproj.GenerateResource.cache
+C:\Users\fhubert\source\repos\SIMEON-CANIN\windowsFormCanin\WindowsFormsCanin\obj\Release\WindowsFormsCanin.csproj.CoreCompileInputs.cache
+C:\Users\fhubert\source\repos\SIMEON-CANIN\windowsFormCanin\WindowsFormsCanin\obj\Release\WindowsFormsCanin.csproj.CopyComplete
+C:\Users\fhubert\source\repos\SIMEON-CANIN\windowsFormCanin\WindowsFormsCanin\obj\Release\WindowsFormsCanin.exe
+C:\Users\fhubert\source\repos\SIMEON-CANIN\windowsFormCanin\WindowsFormsCanin\obj\Release\WindowsFormsCanin.pdb

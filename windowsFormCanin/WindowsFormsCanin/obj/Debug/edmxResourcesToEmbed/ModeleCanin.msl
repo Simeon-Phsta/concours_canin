@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CONCOURSCANINModelStoreContainer" CdmEntityContainer="CONCOURSCANINEntities">
+    <EntitySetMapping Name="BATARDs">
+      <EntityTypeMapping TypeName="CONCOURSCANINModel.BATARD">
+        <MappingFragment StoreEntitySet="BATARD">
+          <ScalarProperty Name="codechien" ColumnName="codechien" />
+          <ScalarProperty Name="codeproprietaire" ColumnName="codeproprietaire" />
+          <ScalarProperty Name="caracteristiques" ColumnName="caracteristiques" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CHIENs">
+      <EntityTypeMapping TypeName="CONCOURSCANINModel.CHIEN">
+        <MappingFragment StoreEntitySet="CHIEN">
+          <ScalarProperty Name="codechien" ColumnName="codechien" />
+          <ScalarProperty Name="codeproprietaire" ColumnName="codeproprietaire" />
+          <ScalarProperty Name="ddnchien" ColumnName="ddnchien" />
+          <ScalarProperty Name="nomchien" ColumnName="nomchien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONCOURS">
+      <EntityTypeMapping TypeName="CONCOURSCANINModel.CONCOUR">
+        <MappingFragment StoreEntitySet="CONCOURS">
+          <ScalarProperty Name="codeconcours" ColumnName="codeconcours" />
+          <ScalarProperty Name="adresseconcours" ColumnName="adresseconcours" />
+          <ScalarProperty Name="cpconcours" ColumnName="cpconcours" />
+          <ScalarProperty Name="dateconcours" ColumnName="dateconcours" />
+          <ScalarProperty Name="salleconcours" ColumnName="salleconcours" />
+          <ScalarProperty Name="villeconcours" ColumnName="villeconcours" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DERACEs">
+      <EntityTypeMapping TypeName="CONCOURSCANINModel.DERACE">
+        <MappingFragment StoreEntitySet="DERACE">
+          <ScalarProperty Name="codechien" ColumnName="codechien" />
+          <ScalarProperty Name="codeproprietaire" ColumnName="codeproprietaire" />
+          <ScalarProperty Name="race" ColumnName="race" />
+          <ScalarProperty Name="robe" ColumnName="robe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PARTICIPEs">
+      <EntityTypeMapping TypeName="CONCOURSCANINModel.PARTICIPE">
+        <MappingFragment StoreEntitySet="PARTICIPE">
+          <ScalarProperty Name="codeproprietaire" ColumnName="codeproprietaire" />
+          <ScalarProperty Name="codechien" ColumnName="codechien" />
+          <ScalarProperty Name="codeconcours" ColumnName="codeconcours" />
+          <ScalarProperty Name="note" ColumnName="note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROPRIETAIREs">
+      <EntityTypeMapping TypeName="CONCOURSCANINModel.PROPRIETAIRE">
+        <MappingFragment StoreEntitySet="PROPRIETAIRE">
+          <ScalarProperty Name="codeproprietaire" ColumnName="codeproprietaire" />
+          <ScalarProperty Name="adresseproprietaire" ColumnName="adresseproprietaire" />
+          <ScalarProperty Name="cpproprietaire" ColumnName="cpproprietaire" />
+          <ScalarProperty Name="nomproprietaire" ColumnName="nomproprietaire" />
+          <ScalarProperty Name="prenomproprietaire" ColumnName="prenomproprietaire" />
+          <ScalarProperty Name="villeproprietaire" ColumnName="villeproprietaire" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="CountQuery" FunctionName="CONCOURSCANINModel.Store.CountQuery" />
+    <FunctionImportMapping FunctionImportName="pCONCOURS_INSERT" FunctionName="CONCOURSCANINModel.Store.pCONCOURS_INSERT" />
+    <FunctionImportMapping FunctionImportName="pPARTICIPE_INSERT" FunctionName="CONCOURSCANINModel.Store.pPARTICIPE_INSERT" />
+    <FunctionImportMapping FunctionImportName="pPROPRIETAIRE_INSERT" FunctionName="CONCOURSCANINModel.Store.pPROPRIETAIRE_INSERT" />
+  </EntityContainerMapping>
+</Mapping>

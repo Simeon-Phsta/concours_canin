@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CONCOURSCANINModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BATARD">
+    <Key>
+      <PropertyRef Name="codechien" />
+      <PropertyRef Name="codeproprietaire" />
+    </Key>
+    <Property Name="codechien" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="codeproprietaire" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="caracteristiques" Type="char" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="CHIEN">
+    <Key>
+      <PropertyRef Name="codechien" />
+      <PropertyRef Name="codeproprietaire" />
+    </Key>
+    <Property Name="codechien" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="codeproprietaire" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="ddnchien" Type="smalldatetime" />
+    <Property Name="nomchien" Type="char" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="CONCOURS">
+    <Key>
+      <PropertyRef Name="codeconcours" />
+    </Key>
+    <Property Name="codeconcours" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="adresseconcours" Type="char" MaxLength="40" />
+    <Property Name="cpconcours" Type="char" MaxLength="5" />
+    <Property Name="dateconcours" Type="smalldatetime" />
+    <Property Name="salleconcours" Type="char" MaxLength="20" />
+    <Property Name="villeconcours" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="DERACE">
+    <Key>
+      <PropertyRef Name="codechien" />
+      <PropertyRef Name="codeproprietaire" />
+    </Key>
+    <Property Name="codechien" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="codeproprietaire" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="race" Type="char" MaxLength="20" />
+    <Property Name="robe" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="PARTICIPE">
+    <Key>
+      <PropertyRef Name="codeproprietaire" />
+      <PropertyRef Name="codechien" />
+      <PropertyRef Name="codeconcours" />
+    </Key>
+    <Property Name="codeproprietaire" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="codechien" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="codeconcours" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="note" Type="int" />
+  </EntityType>
+  <EntityType Name="PROPRIETAIRE">
+    <Key>
+      <PropertyRef Name="codeproprietaire" />
+    </Key>
+    <Property Name="codeproprietaire" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="adresseproprietaire" Type="char" MaxLength="30" />
+    <Property Name="cpproprietaire" Type="char" MaxLength="5" />
+    <Property Name="nomproprietaire" Type="char" MaxLength="20" />
+    <Property Name="prenomproprietaire" Type="char" MaxLength="20" />
+    <Property Name="villeproprietaire" Type="char" MaxLength="30" />
+  </EntityType>
+  <Association Name="FK__CHIEN__codepropr__00551192">
+    <End Role="PROPRIETAIRE" Type="Self.PROPRIETAIRE" Multiplicity="1" />
+    <End Role="CHIEN" Type="Self.CHIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROPRIETAIRE">
+        <PropertyRef Name="codeproprietaire" />
+      </Principal>
+      <Dependent Role="CHIEN">
+        <PropertyRef Name="codeproprietaire" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PARTICIPE_CHIEN">
+    <End Role="CHIEN" Type="Self.CHIEN" Multiplicity="1" />
+    <End Role="PARTICIPE" Type="Self.PARTICIPE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CHIEN">
+        <PropertyRef Name="codechien" />
+        <PropertyRef Name="codeproprietaire" />
+      </Principal>
+      <Dependent Role="PARTICIPE">
+        <PropertyRef Name="codechien" />
+        <PropertyRef Name="codeproprietaire" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PARTICIPE_CONCOURS">
+    <End Role="CONCOURS" Type="Self.CONCOURS" Multiplicity="1" />
+    <End Role="PARTICIPE" Type="Self.PARTICIPE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONCOURS">
+        <PropertyRef Name="codeconcours" />
+      </Principal>
+      <Dependent Role="PARTICIPE">
+        <PropertyRef Name="codeconcours" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="CountQuery" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pCONCOURS_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codeConcours" Type="char" Mode="In" />
+    <Parameter Name="adresse" Type="char" Mode="In" />
+    <Parameter Name="cpconcours" Type="char" Mode="In" />
+    <Parameter Name="dateconcours" Type="smalldatetime" Mode="In" />
+    <Parameter Name="salle" Type="char" Mode="In" />
+    <Parameter Name="ville" Type="char" Mode="In" />
+  </Function>
+  <Function Name="pPARTICIPE_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codeprop" Type="char" Mode="In" />
+    <Parameter Name="codechien" Type="char" Mode="In" />
+    <Parameter Name="codeconc" Type="char" Mode="In" />
+    <Parameter Name="note" Type="int" Mode="In" />
+  </Function>
+  <Function Name="pPROPRIETAIRE_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codeprop" Type="char" Mode="In" />
+    <Parameter Name="adresse" Type="char" Mode="In" />
+    <Parameter Name="cp" Type="char" Mode="In" />
+    <Parameter Name="nom" Type="char" Mode="In" />
+    <Parameter Name="prenom" Type="char" Mode="In" />
+    <Parameter Name="ville" Type="char" Mode="In" />
+  </Function>
+  <EntityContainer Name="CONCOURSCANINModelStoreContainer">
+    <EntitySet Name="BATARD" EntityType="Self.BATARD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CHIEN" EntityType="Self.CHIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONCOURS" EntityType="Self.CONCOURS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DERACE" EntityType="Self.DERACE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PARTICIPE" EntityType="Self.PARTICIPE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROPRIETAIRE" EntityType="Self.PROPRIETAIRE" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__CHIEN__codepropr__00551192" Association="Self.FK__CHIEN__codepropr__00551192">
+      <End Role="PROPRIETAIRE" EntitySet="PROPRIETAIRE" />
+      <End Role="CHIEN" EntitySet="CHIEN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PARTICIPE_CHIEN" Association="Self.FK_PARTICIPE_CHIEN">
+      <End Role="CHIEN" EntitySet="CHIEN" />
+      <End Role="PARTICIPE" EntitySet="PARTICIPE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PARTICIPE_CONCOURS" Association="Self.FK_PARTICIPE_CONCOURS">
+      <End Role="CONCOURS" EntitySet="CONCOURS" />
+      <End Role="PARTICIPE" EntitySet="PARTICIPE" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
